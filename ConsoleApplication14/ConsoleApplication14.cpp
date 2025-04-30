@@ -18,7 +18,7 @@ int main()
             i++;
         }
         else if (user == bot[b])
-        {
+        {//
             std::cout << "Draw." << std::endl;
         }
         else 

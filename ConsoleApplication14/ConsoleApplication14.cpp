@@ -4,29 +4,64 @@
 #include <iostream>
 #include <string>
 
-int main()
-{
-    srand(time(NULL));
+void hello() {
+    std::cout << "\nNORM\n";
+}
+
+void go() {
+
+    std::cout << "\nGOVNO\n";
+    std::string ch;
+
+    std::cin >> ch;
+
+    if (ch == "yes") {
+
+        std::cout << "sosal?\n";
+
+    }
+    else {
+        hello();
+    }
+}
+
+void game() {
+
     std::string user;
     std::string bot[3]{ "rock","paper","scissors" };
     for (int i = 0; i < 3;) {
-            int b = rand() % 3;
-            std::cin >> user;
+        int b = rand() % 3;
+        std::cin >> user;
         if (user == "scissors" && bot[b] == "paper" || user == "rock" && bot[b] == "scissors" || user == "paper" && bot[b] == "rock")
         {
             std::cout << "You Won!" << std::endl;
             i++;
         }
         else if (user == bot[b])
-        {//
+        {
             std::cout << "Draw." << std::endl;
         }
-        else 
+        else
         {
             std::cout << "You Lost ;(" << std::endl;
+            go();
         }
         std::cout << bot[b] << std::endl;
     }
+
+}
+
+
+
+
+
+
+int main()
+{
+    srand(time(NULL));
+    
+    game();
+    
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
